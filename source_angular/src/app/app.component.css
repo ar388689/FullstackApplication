@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+    color: rgb(42, 165, 134);
+    text-shadow: 2.5px 2px black;
+    font-size: 38px;
+    text-decoration: underline;
+}
+a{
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+a.active{
+    color: rgb(255, 0, 55);
+    font-weight: bold;
+}
+nav {
+    background-color: rgb(143, 134, 134); 
+}

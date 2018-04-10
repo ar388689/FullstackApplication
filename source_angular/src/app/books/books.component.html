@@ -1,0 +1,47 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+
+    </div>
+    <div class='panel-body'>
+    <h4>AVAILABLE BOOKS</h4><br/>                       
+        <div class='row'>
+            <div class='col-md-1'>Filter by:</div>
+            <div class='col-md-2'>
+                <input type='text'placeholder="search book title"
+                    [(ngModel)]='titleFilter' /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+        
+        <table border="1" class='table table-striped table-condensed' background="http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/2v/dp/p02vdpfn.jpg" *ngIf='books && books.length'>
+            <thead>
+                <tr style="height:30px;">
+                    <th style="min-width: 80px;">Title</th>
+                    <th style="min-width: 80px;">Author</th>
+                    <th style="min-width: 80px;">ISBN</th>                    
+                    <th style="min-width: 80px;">Publication Date</th>
+                    <th style="min-width: 80px;">Publisher</th>
+                    <th style="min-width: 50px;">Price</th>
+                    <th style="min-width: 80px;">Genre</th>
+                    <th style="min-width: 70px;">Format</th>                    
+                    <th style="width:50px;">Edit </th>
+                    <th style="width:50px;">Delete </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let book of books | bookFilter: titleFilter'>
+                    <td><a [routerLink]="book.id">{{ book.title | uppercase }}</a></td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.isbn }}</td>
+                    <td>{{ book.publicationDate | date }}</td>                    
+                    <td>{{ book.publisher }}</td>
+                    <td>{{ book.price }}</td>
+                    <td>{{ book.genre }}</td>
+                    <td>{{ book.format }}</td>                    
+                    <td><a [routerLink]="['/editBook',book.id]" class="btn btn-xs btn-primary">Edit</a></td>
+                    <td><a (click)="deleteBook(book.id)" class="btn btn-xs btn-danger">Delete</a></td>
+                </tr>
+            </tbody>
+        </table> 
+        
+    </div>
+</div>
