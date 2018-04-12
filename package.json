@@ -4,8 +4,7 @@
   "description": "Integrated Learning Project related details can be put here. For example, how to execute this project, what to expect as a result can be put here.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
